@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Multimedia Encryption</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <h1>Secure Multimedia Transmission</h1>
+    <form action="/encrypt" method="post" enctype="multipart/form-data">
+        <h2>Encrypt a File</h2>
+        <input type="file" name="file" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <button type="submit">Encrypt</button>
+    </form>
+    <hr>
+    <form action="/decrypt" method="post" enctype="multipart/form-data">
+        <h2>Decrypt a File</h2>
+        <input type="file" name="file" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <button type="submit">Decrypt</button>
+    </form>
+</body>
+
+</html>
