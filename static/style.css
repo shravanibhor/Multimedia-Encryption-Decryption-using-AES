@@ -1,0 +1,93 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #C8A2C8;
+    background-image: url('https://i.postimg.cc/Mp3jrXrs/Untitled-design-19.png');
+    background-repeat: repeat; /* Repeat the background image */
+    background-size: auto; /* Ensure the image is not stretched */
+    color: #333;
+}
+
+h1,
+h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+h1 {
+    color: #e5e2e2;
+    text-align: center;
+    font-size: 3em; /* Larger font size for h1 */
+    font-weight: bold; /* Bold font weight */
+    margin-bottom: 20px; /* Additional margin */
+    padding: 20px; /* Padding inside the box */
+    border: 2px solid #444; /* Border around the h1 */
+    background-color:rgba(90, 51, 88, 0.8); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners */
+    display: inline-block; /* Shrink to fit content */
+    margin-left: 40px; /* Center align */
+    margin-right: auto; /* Center align */
+}
+
+h2 {
+    color: black;
+    font-size: 2em; /* Larger font size for h2 */
+    font-weight: bold; /* Bold font weight */
+    margin-bottom: 15px; /* Additional margin */
+}
+
+form {
+    background-color: #fff;
+    padding: 20px; /* Reduced padding */
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Reduced width */
+    margin: 30px auto; /* Centered form */
+}
+
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+input,
+button {
+    width: 100%;
+    padding: 10px; /* Reduced padding */
+    margin: 10px 0; /* Reduced margin */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: rgba(90, 51, 88, 0.8); /* Semi-transparent background */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(90, 51, 88, 0.9); /* Slightly less transparent on hover */
+    transform: scale(1.05);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 40px 0;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}

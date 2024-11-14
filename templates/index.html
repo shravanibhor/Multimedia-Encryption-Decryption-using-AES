@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Multimedia Encryption</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1 class="fade-in">Secure Multimedia Transmission</h1>
+    <form class="fade-in" action="/encrypt" method="post" enctype="multipart/form-data">
+        <h2>Encrypt a File</h2>
+        <input type="file" name="file" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <button type="submit">Encrypt</button>
+    </form>
+    <hr class="fade-in">
+    <form id="decrypt-form" class="fade-in" enctype="multipart/form-data">
+        <h2>Decrypt a File</h2>
+        <input type="file" name="file" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <button type="button" id="decrypt-button">Decrypt</button>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            fadeInElements.forEach(element => {
+                element.classList.add('visible');
+            });
+
+            document.getElementById('decrypt-button').addEventListener('click', function() {
+                const form = document.getElementById('decrypt-form');
+                const formData = new FormData(form);
+
+                fetch('/decrypt', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('File decrypted successfully!');
+                        window.location.href = data.file_url;
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error: wrong password');
+                    alert('An error occurred while decrypting the file.');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
